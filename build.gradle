@@ -6,13 +6,13 @@ targetCompatibility = 1.7
 
 repositories {
 	mavenCentral()
+	mavenLocal()
 }
 
 ext {
     concordionVersion = "1.4.4" 
 	concordionExtensionsVersion = "1.1.1"
-    //concordionExecuteOnlyIfVersion = "[0.1.0,)" 
-	concordionExecuteOnlyIfVersion = "0.1.0-SNAPSHOT"
+    concordionExecuteOnlyIfVersion = "+" 
 }
 
 dependencies {
