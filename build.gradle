@@ -1,13 +1,8 @@
-/*
- * Copyright: Copyright (c) 2013 NZ Customs Service
- */
-
 apply plugin: 'java'
 apply plugin: 'eclipse'
 
-// Java compilier compliance level
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
+sourceCompatibility = 1.7
+targetCompatibility = 1.7
 
 repositories {
 	mavenCentral()
@@ -15,12 +10,15 @@ repositories {
 
 ext {
     concordionVersion = "1.4.4" 
-    concordionExecuteOnlyIfVersion = "[0.0.0,)" 
+	concordionExtensionsVersion = "1.1.1"
+    //concordionExecuteOnlyIfVersion = "[0.1.0,)" 
+	concordionExecuteOnlyIfVersion = "0.1.0-SNAPSHOT"
 }
 
 dependencies {
     testCompile "org.concordion:concordion:$concordionVersion"
-    testCompile "org.concordion:concordion-execute-only-if-extension:$concordionExecuteOnlyIfVersion"
+	testCompile "org.concordion:concordion-extensions:$concordionExtensionsVersion"
+    testCompile "org.concordion:concordion-executeonlyif-extension:$concordionExecuteOnlyIfVersion"
 }
 
 sourceSets {
@@ -29,6 +27,7 @@ sourceSets {
 	}
 }
 
+test.dependsOn cleanTest
 test {
 	include '**/ExecuteOnlyIfDemo.*'
 	systemProperties['concordion.output.dir'] = "$reporting.baseDir/spec"
