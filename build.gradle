@@ -1,23 +1,21 @@
 apply plugin: 'java'
-apply plugin: 'eclipse'
 
-sourceCompatibility = 1.7
-targetCompatibility = 1.7
+sourceCompatibility = 1.6
+targetCompatibility = 1.6
 
 repositories {
 	mavenCentral()
-	mavenLocal()
 }
 
 ext {
     concordionVersion = "1.4.4" 
-	concordionExtensionsVersion = "1.1.1"
+    concordionEmbedVersion = "1.1.2" 
     concordionExecuteOnlyIfVersion = "+" 
 }
 
 dependencies {
     testCompile "org.concordion:concordion:$concordionVersion"
-	testCompile "org.concordion:concordion-extensions:$concordionExtensionsVersion"
+    testCompile "org.concordion:concordion-embed-extension:$concordionEmbedVersion"
     testCompile "org.concordion:concordion-executeonlyif-extension:$concordionExecuteOnlyIfVersion"
 }
 
