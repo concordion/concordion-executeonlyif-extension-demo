@@ -52,7 +52,7 @@ Example 3 shows that a link to a specification is highlighted in grey, when that
 
 Additional Gradle Files
 -----------------------
-`dev.gradle` is only needed if you want to run against snapshot or local builds of the concordion-screenshot-extension.
+`dev.gradle` is only needed if you want to run against snapshot or local builds of this extension.
 `publish.gradle` is only needed if you want to publish the output to Github pages.
 
 If copying the project for your own use, you probably won't want either of these files.
