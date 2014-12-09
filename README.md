@@ -1,42 +1,43 @@
-concordion-executeonlyif-extension
-==================================
+# Introduction
+------------
 
-Determines whether child test should be executed or not.  Useful if parts of a specification cannot be executed in all environments a test suite may run against.
+This project demonstrates the usage of the [Concordion](http://concordion.org) [ExecuteOnlyif Extension](http://github.com/concordion/concordion-executeonlyif-extension) 
 
-Requires:
+    
+# Running the tests
+---------------------------
 
-1. xmlns:ext="urn:concordion-extensions:2010" added to the html so concordion can call the extension from the specification
+The download includes support to run the tests with either <a href="http://www.gradle.org/">Gradle</a>.  
+    
+### Using Gradle
+1. [Download](http://www.gradle.org/downloads.html) and [install](http://www.gradle.org/installation.html) Gradle (this has been tested with 2.1)
+1. From a command line opened at the location to which this package has been unzipped, run `gradle clean test`
+1. View the Concordion output under the subfolder `build/reports/spec/org/concordion/ext/demo/`
+    
+### Running from your IDE
+Import as a Gradle or as a Maven project. This may require additional plugins to be installed to support Gradle.
 
-  <code>&lt;html xmlns:c="http://www.concordion.org/2007/concordion" xmlns:ext="urn:concordion-extensions:2010"&gt;</code>
+Under the `src/test/java` folder, find the `StoryboardDemo` class in the `org.concordion.ext.demo` package and run as a JUnit test. The location of the Concordion output is shown on the standard output console.
 
-2. Place any concordion commands that you wish to conditionally execute as children of the executeOnlyIf command
 
-  <code>
-  // Specification
-	&lt;div ext:executeOnlyIf="shouldNotExecute()"&gt;
-		&lt;p&gt;When I google "&lt;span c:execute="searchFor(#TEXT)"&gt;6 * 9&lt;/span&gt;" the answer should be "&lt;span c:assertEquals="getCalculatorResult()"&gt;42&lt;/span&gt;".&lt;/p&gt;
-	&lt;/div&gt;
+What you should see
+--------------------------------
+    
+### JUnit output
+The test should pass successfully, though the console output will show a failure with the message:
 
-  // Fixture
-	public boolean shouldNotExecute() {
-		return false;
-	}
-  </code>
+> <-- Note: This test has been marked as EXPECTED_TO_FAIL
 
-3. Optionally you can use the Embed extension to give a reason you haven't excuted part of the spec
+This test deliberately fails in order to demonstrate the extension.  It uses Concordion's `@ExpectedToFail` annotation to keep the JUnit passing (you'd normally only use this when you have a partially implemented feature).
 
-  <code>
-  // Specification
-  &lt;span ext:embed="getNotExecuteReason()"&gt;&lt;/span&gt;
 
-  // Fixture
-  public String getNotExecuteReason() {
-		String msg = "";
+Additional Gradle Files
+-----------------------
+`dev.gradle` is only needed if you want to run against snapshot or local builds of the concordion-screenshot-extension.
 
-		msg += "<p style=\"background-color: #FFCC99; padding: 8px; border: 1px solid #FF6600; margin: 10px 0px 10px 0px; font-weight: bold\">";
-		msg += "The following step has been skipped to prove we can.";
-		msg += "</p>";
+If copying the project for your own use, you probably won't want either of these files.
 
-		return msg;
-	}
-  </code>
+
+Mailing List
+-----------------
+Feel free to discuss this demo project on the Concordion [mailing list](https://groups.google.com/d/forum/concordion).
