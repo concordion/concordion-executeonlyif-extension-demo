@@ -1,0 +1,13 @@
+language: java
+jdk:
+- oraclejdk8
+- oraclejdk7
+env:
+  global:
+  - secure: ob4r9a8otJ4WZhpIZjeJZ63ibhw/CIuSK5rC4/omBHlKvUpFOV07hCklUZPGgLdjgc3fFf/+TAKaYtkLcixTSxN9r01BVpl4G+6ujohca5uNKLNRaSVatBlZfHgyAwrPc925MG6hk6GMfoUihLQVRZKtvgkyVXw+NjtF8+zGYdw=
+before_script:
+- export DISPLAY=:99.0
+- sh -e /etc/init.d/xvfb start
+- sleep 3
+after_success:
+- ".utility/push-output-to-ghpages.sh"
