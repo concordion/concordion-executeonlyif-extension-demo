@@ -4,7 +4,7 @@
 # Introduction
 ------------
 
-This project demonstrates the usage of the [Concordion](http://concordion.org) [ExecuteOnlyif Extension](http://github.com/concordion/concordion-executeonlyif-extension).
+This project demonstrates the usage of the [Concordion](https://concordion.org) [ExecuteOnlyif Extension](http://github.com/concordion/concordion-executeonlyif-extension).
 
 Example output is shown [here](http://concordion.github.io/concordion-executeonlyif-extension-demo/spec/org/concordion/ext/demo/ExecuteOnlyIfDemo.html).
 
