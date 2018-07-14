@@ -13,9 +13,9 @@ repositories {
 }
 
 ext {
-    concordionVersion = "[1.4.6,)" 
-    concordionEmbedVersion = "1.1.2" 
-    concordionExecuteOnlyIfVersion = "[0.2.0,)" 
+    concordionVersion = "[2.2.0)" 
+    concordionEmbedVersion = "1.2.0" 
+    concordionExecuteOnlyIfVersion = "[0.3.0,)" 
 }
 
 dependencies {
