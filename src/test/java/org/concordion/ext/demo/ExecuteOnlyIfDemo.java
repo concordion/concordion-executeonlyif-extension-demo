@@ -39,10 +39,13 @@ public class ExecuteOnlyIfDemo {
 	}
 
 	public boolean shouldExecute() {
+		System.out.println("shouldExecute = " + shouldExecute);
+
 		return shouldExecute;
 	}
 	
 	public String getCalculatorResult() {
+		System.out.println("getting calced");
 		return ((Integer)(6*7)).toString();
 	}
 }
