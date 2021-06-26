@@ -1,12 +1,5 @@
 apply plugin: 'java'
 
-sourceCompatibility = 1.6
-targetCompatibility = 1.6
-
-wrapper {
-    gradleVersion = "4.8.1"
-}
-
 repositories {
 	mavenCentral()
 }
@@ -18,9 +11,9 @@ ext {
 }
 
 dependencies {
-    testCompile "org.concordion:concordion:$concordionVersion"
-    testCompile "org.concordion:concordion-embed-extension:$concordionEmbedVersion"
-    testCompile "org.concordion:concordion-executeonlyif-extension:$concordionExecuteOnlyIfVersion"
+    testImplementation "org.concordion:concordion:$concordionVersion"
+    testImplementation "org.concordion:concordion-embed-extension:$concordionEmbedVersion"
+    testImplementation "org.concordion:concordion-executeonlyif-extension:$concordionExecuteOnlyIfVersion"
 }
 
 sourceSets {
