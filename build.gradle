@@ -5,7 +5,7 @@ repositories {
 }
 
 ext {
-    concordionVersion = "2.2.0" 
+    concordionVersion = "4.0.0" 
     concordionEmbedVersion = "1.2.0" 
     concordionExecuteOnlyIfVersion = "0.3.0" 
 }
@@ -14,6 +14,7 @@ dependencies {
     testImplementation "org.concordion:concordion:$concordionVersion"
     testImplementation "org.concordion:concordion-embed-extension:$concordionEmbedVersion"
     testImplementation "org.concordion:concordion-executeonlyif-extension:$concordionExecuteOnlyIfVersion"
+	testRuntimeOnly('org.junit.vintage:junit-vintage-engine')
 }
 
 sourceSets {
